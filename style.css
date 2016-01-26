@@ -1,0 +1,10 @@
+body {
+  font-family: sans-serif;
+}
+#contacts {
+  display: flex;
+}
+
+#contacts div {
+  margin: 10px;
+}

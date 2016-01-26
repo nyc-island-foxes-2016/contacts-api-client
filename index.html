@@ -4,12 +4,40 @@
   <title>Contacts</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
   <script type="text/javascript" src="model.js"></script>
   <script type="text/javascript" src="view.js"></script>
   <script type="text/javascript" src="controller.js"></script>
   <script type="text/javascript" src="setup.js"></script>
 </head>
 <body>
+
+<div id="contacts">
+  <div id="contact-list"></div>
+  <div id="contact-detail"></div>
+</div>
+
+
+<script id="contact-list-template" type="text/x-handlebars-template">
+   <ul>
+     {{#each contacts}}
+       <li data-id="{{id}}">{{name.first}} {{name.last}} </li>
+     {{/each}}
+   </ul>
+
+</script>
+
+
+<script id="contact-template" type="text/x-handlebars-template">
+  <div>
+    <div class="other-name">Full name: {{fullName}} </div>
+    <div class="name">Name: {{name.first}} {{name.last}}</div>
+    <div class="address"> Address: {{address.city}} 
+    {{address.state}} {{address.zipCode}} </div>
+    <div class="phone">Phone: {{phone}}</div>
+  </div>
+</script>
+
 
 </body>
 </html>
